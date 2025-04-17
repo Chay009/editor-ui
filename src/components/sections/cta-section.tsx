@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Vortex } from "../ui/shadcn-io/vortex";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { GridPattern } from "../ui/shadcn-io/grid-pattern";
 
@@ -14,15 +13,11 @@ export function CTASection({ onGetStarted }: CTASectionProps) {
     <section className="relative w-full py-32 px-4 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 overflow-hidden">
       <GridPattern className="absolute inset-0" />
       <div className="container mx-auto max-w-6xl">
-        <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl bg-slate-900 dark:bg-slate-950 border border-slate-800 dark:border-slate-700 min-h-[600px]">
-          {/* Vortex Background */}
-          <Vortex
-            backgroundColor="transparent"
-            rangeY={800}
-            particleCount={500}
-            baseHue={200}
-            className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
-          >
+        <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 dark:bg-slate-950 border border-slate-800 dark:border-slate-700 min-h-[600px]">
+          {/* Animated gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 animate-pulse" />
+
+          <div className="relative z-10 flex items-center flex-col justify-center px-6 py-24 sm:px-16 w-full h-full min-h-[600px]">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -147,7 +142,7 @@ export function CTASection({ onGetStarted }: CTASectionProps) {
                 ))}
               </motion.div>
             </motion.div>
-          </Vortex>
+          </div>
         </div>
       </div>
     </section>
